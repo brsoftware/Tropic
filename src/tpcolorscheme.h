@@ -1,0 +1,182 @@
+#ifndef TPCOLORSCHEME_H
+#define TPCOLORSCHEME_H
+
+#include <TpGlobals>
+
+TP_NAMESPACE
+
+typedef struct TpColorScheme
+{
+    QColor Default = QColor(0xf4, 0xf4, 0xf4);
+    QColor Comment = QColor(0x60, 0x8b, 0x4e);
+    QColor CommentLine = QColor(0x60, 0x8b, 0x4e);
+    QColor CommentDoc = QColor(0x50, 0x7b, 0x3e);
+    QColor Number = QColor(0xb5, 0xce, 0xa8);
+    QColor Keyword = QColor(0x4e, 0xc9, 0xb0);
+    QColor DoubleQuotedString = QColor(0xce, 0x91, 0x78);
+    QColor SingleQuotedString = QColor(0xc6, 0x8d, 0x75);
+    QColor UUID = QColor(0x80, 0x80, 0x80);
+    QColor PreProcessor = QColor(0xc5, 0x86, 0xc0);
+    QColor Operator = QColor(0xf4, 0xf4, 0xd4);
+    QColor Identifier = QColor(0xd4, 0xd4, 0xd4);
+    QColor UnclosedString = QColor(0xe6, 0x9f, 0x66);
+    QColor VerbatimString = QColor(0xf9, 0xcb, 0x9c);
+    QColor Regex = QColor(0x80, 0x80, 0x80);
+    QColor CommentLineDoc = QColor(0x50, 0x7b, 0x3e);
+    QColor KeywordSet2 = QColor(0x9c, 0xdc, 0xfe);
+    QColor CommentDocKeyword = QColor(0x2f, 0x90, 0xcb);
+    QColor CommentDocKeywordError = QColor(0x50, 0x7b, 0x3e);
+    QColor GlobalClass = QColor(0x8e, 0xf9, 0xf0);
+    QColor RawString = QColor(0xf9, 0xcb, 0x9c);
+    QColor TripleQuotedVerbatimString = QColor(0xf9, 0xcb, 0x9c);
+    QColor HashQuotedString = QColor(0xaa, 0x70, 0x52);
+    QColor PreProcessorComment = QColor(0x60, 0x8b, 0x4e);
+    QColor PreProcessorCommentLineDoc = QColor(0x50, 0x7b, 0x3e);
+    QColor UserLiteral = QColor(0xe6, 0xdb, 0x74);
+    QColor TaskMarker = QColor(0x2f, 0x90, 0xcb);
+    QColor EscapeSequence = QColor(0x4e, 0xc9, 0xb0);
+    QColor InactiveDefault = QColor(0xd4, 0xd4, 0xd4);
+    QColor InactiveComment = QColor(0x40, 0x6b, 0x2e);
+    QColor InactiveCommentLine = QColor(0x40, 0x6b, 0x2e);
+    QColor InactiveCommentDoc = QColor(0x30, 0x5b, 0x1e);
+    QColor InactiveNumber = QColor(0x95, 0xae, 0x88);
+    QColor InactiveKeyword = QColor(0x2e, 0xa9, 0x90);
+    QColor InactiveDoubleQuotedString = QColor(0xae, 0x71, 0x58);
+    QColor InactiveSingleQuotedString = QColor(0xa6, 0x6d, 0x55);
+    QColor InactiveUUID = QColor(0x60, 0x60, 0x60);
+    QColor InactivePreProcessor = QColor(0xa5, 0x66, 0xa0);
+    QColor InactiveOperator = QColor(0xd4, 0xd4, 0xb4);
+    QColor InactiveIdentifier = QColor(0xb4, 0xb4, 0xb4);
+    QColor InactiveUnclosedString = QColor(0xc6, 0x7f, 0x46);
+    QColor InactiveVerbatimString = QColor(0xd9, 0xab, 0x7c);
+    QColor InactiveRegex = QColor(0x60, 0x60, 0x60);
+    QColor InactiveCommentLineDoc = QColor(0x30, 0x5b, 0x1e);
+    QColor InactiveKeywordSet2 = QColor(0x7c, 0xbc, 0xde);
+    QColor InactiveCommentDocKeyword = QColor(0x0f, 0x70, 0xab);
+    QColor InactiveCommentDocKeywordError = QColor(0x30, 0x5b, 0x1e);
+    QColor InactiveGlobalClass = QColor(0x6e, 0xd9, 0xd0);
+    QColor InactiveRawString = QColor(0xd9, 0xab, 0x7c);
+    QColor InactiveTripleQuotedVerbatimString = QColor(0xd9, 0xab, 0x7c);
+    QColor InactiveHashQuotedString = QColor(0x8a, 0x50, 0x32);
+    QColor InactivePreProcessorComment = QColor(0x40, 0x6b, 0x2e);
+    QColor InactivePreProcessorCommentLineDoc = QColor(0x30, 0x5b, 0x1e);
+    QColor InactiveUserLiteral = QColor(0xc6, 0xbb, 0x54);
+    QColor InactiveTaskMarker = QColor(0x0f, 0x70, 0xab);
+    QColor InactiveEscapeSequence = QColor(0x2e, 0xa9, 0x90);
+    QColor Error = QColor(0xff, 0x00, 0x00);
+    QColor Type = QColor(0xff, 0x80, 0x80);
+    QColor PrimitiveType = QColor(0xef, 0xef, 0x8f);
+    QColor Warning = QColor(0xf3, 0xa9, 0x47);
+    QColor WeakWarning = QColor(0xce, 0xc7, 0xb0);
+
+    QColor BgDefault = QColor(0x23, 0x24, 0x25);
+    QColor BgComment = QColor(0x23, 0x24, 0x25);
+    QColor BgCommentLine = QColor(0x23, 0x24, 0x25);
+    QColor BgCommentDoc = QColor(0x23, 0x24, 0x25);
+    QColor BgNumber = QColor(0x23, 0x24, 0x25);
+    QColor BgKeyword = QColor(0x23, 0x24, 0x25);
+    QColor BgDoubleQuotedString = QColor(0x23, 0x24, 0x25);
+    QColor BgSingleQuotedString = QColor(0x23, 0x24, 0x25);
+    QColor BgUUID = QColor(0x23, 0x24, 0x25);
+    QColor BgPreProcessor = QColor(0x23, 0x24, 0x25);
+    QColor BgOperator = QColor(0x23, 0x24, 0x25);
+    QColor BgIdentifier = QColor(0x23, 0x24, 0x25);
+    QColor BgUnclosedString = QColor(0x23, 0x24, 0x25);
+    QColor BgVerbatimString = QColor(0x23, 0x24, 0x25);
+    QColor BgRegex = QColor(0x23, 0x24, 0x25);
+    QColor BgCommentLineDoc = QColor(0x23, 0x24, 0x25);
+    QColor BgKeywordSet2 = QColor(0x23, 0x24, 0x25);
+    QColor BgCommentDocKeyword = QColor(0x23, 0x24, 0x25);
+    QColor BgCommentDocKeywordError = QColor(0x23, 0x24, 0x25);
+    QColor BgGlobalClass = QColor(0x23, 0x24, 0x25);
+    QColor BgRawString = QColor(0x23, 0x24, 0x25);
+    QColor BgTripleQuotedVerbatimString = QColor(0x23, 0x24, 0x25);
+    QColor BgHashQuotedString = QColor(0x23, 0x24, 0x25);
+    QColor BgPreProcessorComment = QColor(0x23, 0x24, 0x25);
+    QColor BgPreProcessorCommentLineDoc = QColor(0x23, 0x24, 0x25);
+    QColor BgUserLiteral = QColor(0x23, 0x24, 0x25);
+    QColor BgTaskMarker = QColor(0x23, 0x24, 0x25);
+    QColor BgEscapeSequence = QColor(0x23, 0x24, 0x25);
+    QColor BgInactiveDefault = QColor(0x23, 0x24, 0x25);
+    QColor BgInactiveComment = QColor(0x23, 0x24, 0x25);
+    QColor BgInactiveCommentLine = QColor(0x23, 0x24, 0x25);
+    QColor BgInactiveCommentDoc = QColor(0x23, 0x24, 0x25);
+    QColor BgInactiveNumber = QColor(0x23, 0x24, 0x25);
+    QColor BgInactiveKeyword = QColor(0x23, 0x24, 0x25);
+    QColor BgInactiveDoubleQuotedString = QColor(0x23, 0x24, 0x25);
+    QColor BgInactiveSingleQuotedString = QColor(0x23, 0x24, 0x25);
+    QColor BgInactiveUUID = QColor(0x23, 0x24, 0x25);
+    QColor BgInactivePreProcessor = QColor(0x23, 0x24, 0x25);
+    QColor BgInactiveOperator = QColor(0x23, 0x24, 0x25);
+    QColor BgInactiveIdentifier = QColor(0x23, 0x24, 0x25);
+    QColor BgInactiveUnclosedString = QColor(0x23, 0x24, 0x25);
+    QColor BgInactiveVerbatimString = QColor(0x23, 0x24, 0x25);
+    QColor BgInactiveRegex = QColor(0x23, 0x24, 0x25);
+    QColor BgInactiveCommentLineDoc = QColor(0x23, 0x24, 0x25);
+    QColor BgInactiveKeywordSet2 = QColor(0x23, 0x24, 0x25);
+    QColor BgInactiveCommentDocKeyword = QColor(0x23, 0x24, 0x25);
+    QColor BgInactiveCommentDocKeywordError = QColor(0x23, 0x24, 0x25);
+    QColor BgInactiveGlobalClass = QColor(0x23, 0x24, 0x25);
+    QColor BgInactiveRawString = QColor(0x23, 0x24, 0x25);
+    QColor BgInactiveTripleQuotedVerbatimString = QColor(0x23, 0x24, 0x25);
+    QColor BgInactiveHashQuotedString = QColor(0x23, 0x24, 0x25);
+    QColor BgInactivePreProcessorComment = QColor(0x23, 0x24, 0x25);
+    QColor BgInactivePreProcessorCommentLineDoc = QColor(0x23, 0x24, 0x25);
+    QColor BgInactiveUserLiteral = QColor(0x23, 0x24, 0x25);
+    QColor BgInactiveTaskMarker = QColor(0x23, 0x24, 0x25);
+    QColor BgInactiveEscapeSequence = QColor(0x23, 0x24, 0x25);
+    QColor BgError = QColor(0x23, 0x24, 0x25);
+    QColor BgType = QColor(0x23, 0x24, 0x25);
+    QColor BgPrimitiveType = QColor(0x23, 0x24, 0x25);
+    QColor BgWarning = QColor(0x23, 0x24, 0x25);
+    QColor BgWeakWarning = QColor(0x23, 0x24, 0x25);
+
+    // Diff only.
+    QColor BgLineRemoved = QColor(0x7f, 0x00, 0x00);
+    QColor BgLineAdded = QColor(0x00, 0x7f, 0x00);
+    QColor BgLineChanged = QColor(0x00, 0x00, 0x7f);
+    QColor BgAddingPatchAdded = QColor(0x00, 0xaa, 0xaa);
+    QColor BgRemovingPatchAdded = QColor(0xaa, 0xaa, 0x00);
+    QColor BgAddingPatchRemoved = QColor(0xaa, 0x00, 0xaa);
+    QColor BgRemovingPatchRemoved = QColor(0xaa, 0x00, 0x00);
+
+    // Markdown only.
+    QColor Special = QColor(0x9b, 0x22, 0x22);
+    QColor StrongEmphasisAsterisks = QColor(0x9a, 0xa7, 0xd6);
+    QColor StrongEmphasisUnderscores = QColor(0x8a, 0x97, 0xc6);
+    QColor EmphasisAsterisks = QColor(0xd6, 0xc5, 0x40);
+    QColor EmphasisUnderscores = QColor(0xc6, 0xb5, 0x30);
+    QColor Header1 = QColor(0xbe, 0xef, 0xc4);
+    QColor Header2 = QColor(0xae, 0xdf, 0xb4);
+    QColor Header3 = QColor(0x9e, 0xcf, 0xa4);
+    QColor Header4 = QColor(0x8e, 0xbf, 0x94);
+    QColor Header5 = QColor(0x7e, 0xaf, 0x84);
+    QColor Header6 = QColor(0x6e, 0x9f, 0x74);
+    QColor Prechar = QColor(0xc2, 0xc2, 0xc2);
+    QColor UnorderedListItem = KeywordSet2;
+    QColor OrderedListItem = CommentDocKeyword;
+    QColor BlockQuote = Regex;
+    QColor StrikeOut = QColor(0xac, 0x97, 0x98);
+    QColor HorizontalRule = CommentDoc;
+    QColor Link = Type;
+    QColor CodeBackticks = QColor(0xab, 0xab, 0xab);
+    QColor CodeDoubleBackticks = QColor(0xab, 0xab, 0xab);
+    QColor CodeBlock = QColor(0x9c, 0x9c, 0x9c);
+
+    QColor Caret = QColor(0xe4, 0xe4, 0xe4);
+    QColor BgCaret = QColor(0x33, 0x34, 0x35);
+    QColor IndentationGuides = QColor(0xa4, 0xa4, 0xa4);
+    QColor BgIndentationGuides = QColor(0xa4, 0xa4, 0xa4);
+    QColor Margin = QColor(0xf4, 0xf4, 0xf4);
+    QColor BgMargin = QColor(0x54, 0x55, 0x54);
+    QColor Selection = QColor(0xe9, 0xe8, 0xe7);
+    QColor BgSelection = QColor(0x1e, 0x55, 0x5d);
+    QColor BgFindIndicator = QColor(0x0a, 0x82, 0xff);
+    QColor BgIncrementalIndicator = QColor(0x0e, 0x45, 0x4d);
+} TpColorScheme;
+
+inline TpColorScheme *defaultColorScheme = new TpColorScheme();
+
+TP_END_NAMESPACE
+
+#endif // TPCOLORSCHEME_H
