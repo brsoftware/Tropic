@@ -60,6 +60,8 @@ if (${TROPIC_OS} STREQUAL "win32")
         set(QSCINTILLA_LIB ${CMAKE_CURRENT_LIST_DIR}/lib/Qsci/win32/MSVC/qscintilla2_qt6.lib)
         set(QSCINTILLA_ADDITIONAL_LIB ${CMAKE_CURRENT_LIST_DIR}/lib/Qsci/win32/MSVC/qscintilla2_qt6.dll)
     endif (MINGW)
+elseif (${TROPIC_OS} STREQUAL "darwin")
+    set(QSCINTILLA_LIB ${CMAKE_CURRENT_LIST_DIR}/lib/Qsci/darwin/libqscintilla2_qt6.15.2.1.dylib)
 endif (${TROPIC_OS} STREQUAL "win32")
 
 message(STATUS "QScintilla Lib is ${QSCINTILLA_LIB}")

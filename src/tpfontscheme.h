@@ -10,7 +10,13 @@ typedef struct TpFontScheme
     TpFontScheme()
     {
         QFont font;
+#if defined(Q_OS_WIN) || defined(Q_OS_WIN32)
         font.setFamily("Consolas");
+#elif defined(Q_OS_DARWIN) || defined(Q_OS_MAC)
+        font.setFamily("Menlo");
+#else
+        font.setFamily("Courier New");
+#endif
         font.setPointSize(12);
         font.setStyleHint(QFont::StyleHint::Monospace);
 

@@ -7423,7 +7423,7 @@ TpApplication::TpApplication(int &argc, char *argv[],
     m_app->appMemory = new QSharedMemory(m_app->appBlockServerName);
 #endif
     m_app->appMemory->attach();
-    delete m_app->memory;
+    delete m_app->appMemory;
 #endif
 
 #if QT_VERSION >= QT_VERSION_CHECK(6, 6, 0)
