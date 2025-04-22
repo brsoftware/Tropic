@@ -1,5 +1,6 @@
 # We don't do build directories here.
 bin/
+bin_qt5/
 build/
 
 # We don't do Qt Creator cache files here.
