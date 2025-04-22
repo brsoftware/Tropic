@@ -2656,6 +2656,9 @@ public:
 
     virtual void setLexerProperty(int prop, QVariant value);
     virtual QVariant lexerProperty(int prop) const;
+
+    QByteArray textAsBytes(const QString &text) const;
+    QString bytesAsText(const QByteArray &bytes) const;
 };
 
 TP_END_NAMESPACE

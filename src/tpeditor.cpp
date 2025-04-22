@@ -578,6 +578,18 @@ TpMainWindow *TpEditor::ultimateParent() const
     return m_parent->m_parent->m_parent->m_parent;
 }
 
+QByteArray TpEditor::textAsBytes(const QString &text) const
+{
+    // When we support encodings in the future, remember to change this one
+    return text.toUtf8();
+}
+
+QString TpEditor::bytesAsText(const QByteArray &text) const
+{
+    // This one too
+    return QString::fromUtf8(text);
+}
+
 void TpEditor::keyPressEvent(QKeyEvent *event)
 {
 #define TEST_FLAG(k) (event->key() == Qt::Key::Key_##k)

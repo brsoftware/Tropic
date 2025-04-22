@@ -66,6 +66,9 @@ public:
 
     TpMainWindow *ultimateParent() const;
 
+    QByteArray textAsBytes(const QString &text) const;
+    QString bytesAsText(const QByteArray &bytes) const;
+
 signals:
     void fileNameChanged(const QString &path, const QString &name);
     void checkBoxChecked(bool isChecked);

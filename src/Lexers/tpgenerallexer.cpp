@@ -64,4 +64,20 @@ QVariant TpGeneralLexer::lexerProperty(int) const
     return 0;
 }
 
+QByteArray TpGeneralLexer::textAsBytes(const QString &text) const
+{
+    if (TpEditor *editor = qobject_cast<TpEditor*>(parent()))
+        return editor->textAsBytes(text);
+    else
+        return QByteArray();
+}
+
+QString TpGeneralLexer::bytesAsText(const QByteArray &text) const
+{
+    if (TpEditor *editor = qobject_cast<TpEditor*>(parent()))
+        return editor->bytesAsText(text);
+    else
+        return QByteArray();
+}
+
 TP_END_NAMESPACE
