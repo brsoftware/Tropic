@@ -107,7 +107,7 @@ set(TROPIC_SOURCES_LEXERS
     ${CMAKE_CURRENT_LIST_DIR}/tplexerjava.cpp
     ${CMAKE_CURRENT_LIST_DIR}/tplexerjava.h
     ${CMAKE_CURRENT_LIST_DIR}/TpLexerJavaScript
-    ${CMAKE_CURRENT_LIST_DIR}/TpLexerjavascript.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tplexerjavascript.cpp
     ${CMAKE_CURRENT_LIST_DIR}/tplexerjavascript.h
     ${CMAKE_CURRENT_LIST_DIR}/TpLexerJSON
     ${CMAKE_CURRENT_LIST_DIR}/tplexerjson.cpp
@@ -170,8 +170,8 @@ set(TROPIC_SOURCES_LEXERS
     ${CMAKE_CURRENT_LIST_DIR}/tplexerpython3.cpp
     ${CMAKE_CURRENT_LIST_DIR}/tplexerpython3.h
     ${CMAKE_CURRENT_LIST_DIR}/TpLexerPython3Extended
-    ${CMAKE_CURRENT_LIST_DIR}/tplexerpython3Extended.cpp
-    ${CMAKE_CURRENT_LIST_DIR}/tplexerpython3Extended.h
+    ${CMAKE_CURRENT_LIST_DIR}/tplexerpython3extended.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tplexerpython3extended.h
     ${CMAKE_CURRENT_LIST_DIR}/TpLexerQML
     ${CMAKE_CURRENT_LIST_DIR}/tplexerqml.cpp
     ${CMAKE_CURRENT_LIST_DIR}/tplexerqml.h

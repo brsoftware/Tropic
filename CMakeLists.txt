@@ -67,6 +67,8 @@ else ()
         endif (MINGW)
     elseif (${TROPIC_OS} STREQUAL "darwin")
         set(QSCINTILLA_LIB ${CMAKE_CURRENT_LIST_DIR}/lib/Qsci/darwin/libqscintilla2_qt6.15.2.1.dylib)
+    elseif (${TROPIC_OS} STREQUAL "linux")
+        set(QSCINTILLA_LIB ${CMAKE_CURRENT_LIST_DIR}/lib/Qsci/linux/libqscintilla2_qt6.so.15)
     endif (${TROPIC_OS} STREQUAL "win32")
 endif (QT_VERSION VERSION_LESS 6.0)
 
