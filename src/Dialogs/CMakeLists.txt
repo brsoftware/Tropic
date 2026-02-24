@@ -1,0 +1,37 @@
+set(TROPIC_SOURCES_DIALOGS
+    ${TROPIC_SOURCES_DIALOGS}
+    ${CMAKE_CURRENT_LIST_DIR}/TpDialogCharacter
+    ${CMAKE_CURRENT_LIST_DIR}/tpdialogcharacter.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tpdialogcharacter.h
+    ${CMAKE_CURRENT_LIST_DIR}/TpDialogCommands
+    ${CMAKE_CURRENT_LIST_DIR}/tpdialogcommands.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tpdialogcommands.h
+    ${CMAKE_CURRENT_LIST_DIR}/TpDialogDocuments
+    ${CMAKE_CURRENT_LIST_DIR}/tpdialogdocuments.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tpdialogdocuments.h
+    ${CMAKE_CURRENT_LIST_DIR}/TpDialogGoto
+    ${CMAKE_CURRENT_LIST_DIR}/tpdialoggoto.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tpdialoggoto.h
+    ${CMAKE_CURRENT_LIST_DIR}/TpDialogOpen
+    ${CMAKE_CURRENT_LIST_DIR}/tpdialogopen.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tpdialogopen.h
+    ${CMAKE_CURRENT_LIST_DIR}/TpDialogOpenDir
+    ${CMAKE_CURRENT_LIST_DIR}/tpdialogopendir.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tpdialogopendir.h
+    ${CMAKE_CURRENT_LIST_DIR}/TpDialogSave
+    ${CMAKE_CURRENT_LIST_DIR}/tpdialogsave.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tpdialogsave.h
+    ${CMAKE_CURRENT_LIST_DIR}/TpDialogSaveCopyTo
+    ${CMAKE_CURRENT_LIST_DIR}/tpdialogsavecopyto.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tpdialogsavecopyto.h
+    ${CMAKE_CURRENT_LIST_DIR}/TpDialogSettings
+    ${CMAKE_CURRENT_LIST_DIR}/tpdialogsettings.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tpdialogsettings.h
+    ${CMAKE_CURRENT_LIST_DIR}/TpMessageConfirmClose
+    ${CMAKE_CURRENT_LIST_DIR}/tpmessageconfirmclose.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tpmessageconfirmclose.h
+    ${CMAKE_CURRENT_LIST_DIR}/TpMessageCritical
+    ${CMAKE_CURRENT_LIST_DIR}/tpmessagecritical.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tpmessagecritical.h
+    PARENT_SCOPE
+)

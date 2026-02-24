@@ -1,0 +1,27 @@
+set(TROPIC_SOURCES_UTILITIES
+    ${TROPIC_SOURCES_UTILITIES}
+    ${CMAKE_CURRENT_LIST_DIR}/TpCaseEngine
+    ${CMAKE_CURRENT_LIST_DIR}/tpcaseengine.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tpcaseengine.h
+    ${CMAKE_CURRENT_LIST_DIR}/TpDelegateTypeChecker
+    ${CMAKE_CURRENT_LIST_DIR}/tpdelegatetypechecker.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tpdelegatetypechecker.h
+    ${CMAKE_CURRENT_LIST_DIR}/TpFileSystemAssistants
+    ${CMAKE_CURRENT_LIST_DIR}/tpfilesystemassistants.h
+    ${CMAKE_CURRENT_LIST_DIR}/TpOpenAssistant
+    ${CMAKE_CURRENT_LIST_DIR}/tpopenassistant.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tpopenassistant.h
+    ${CMAKE_CURRENT_LIST_DIR}/TpSaveAssistant
+    ${CMAKE_CURRENT_LIST_DIR}/tpsaveassistant.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tpsaveassistant.h
+    ${CMAKE_CURRENT_LIST_DIR}/TpSaveCopyAssistant
+    ${CMAKE_CURRENT_LIST_DIR}/tpsavecopyassistant.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tpsavecopyassistant.h
+    ${CMAKE_CURRENT_LIST_DIR}/TpSessionThread
+    ${CMAKE_CURRENT_LIST_DIR}/tpsessionthread.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tpsessionthread.h
+    ${CMAKE_CURRENT_LIST_DIR}/TpTabInfo
+    ${CMAKE_CURRENT_LIST_DIR}/tptabinfo.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tptabinfo.h
+    PARENT_SCOPE
+)

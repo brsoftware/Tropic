@@ -1,0 +1,22 @@
+set(TROPIC_SOURCES_VIEWS
+    ${TROPIC_SOURCES_VIEWS}
+    ${CMAKE_CURRENT_LIST_DIR}/TpBookmarkView
+    ${CMAKE_CURRENT_LIST_DIR}/tpbookmarkview.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tpbookmarkview.h
+    ${CMAKE_CURRENT_LIST_DIR}/TpCommandsView
+    ${CMAKE_CURRENT_LIST_DIR}/tpcommandsview.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tpcommandsview.h
+    ${CMAKE_CURRENT_LIST_DIR}/TpDocumentView
+    ${CMAKE_CURRENT_LIST_DIR}/tpdocumentview.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tpdocumentview.h
+    ${CMAKE_CURRENT_LIST_DIR}/TpDocumentsView
+    ${CMAKE_CURRENT_LIST_DIR}/tpdocumentsview.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tpdocumentsview.h
+    ${CMAKE_CURRENT_LIST_DIR}/TpFileView
+    ${CMAKE_CURRENT_LIST_DIR}/tpfileview.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tpfileview.h
+    ${CMAKE_CURRENT_LIST_DIR}/TpSettingsView
+    ${CMAKE_CURRENT_LIST_DIR}/tpsettingsview.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tpsettingsview.h
+    PARENT_SCOPE
+)

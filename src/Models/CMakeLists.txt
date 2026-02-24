@@ -1,0 +1,27 @@
+set(TROPIC_SOURCES_MODELS
+    ${TROPIC_SOURCES_MODELS}
+    ${CMAKE_CURRENT_LIST_DIR}/TpBookmarkItem
+    ${CMAKE_CURRENT_LIST_DIR}/tpbookmarkitem.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tpbookmarkitem.h
+    ${CMAKE_CURRENT_LIST_DIR}/TpCommandsItem
+    ${CMAKE_CURRENT_LIST_DIR}/tpcommandsitem.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tpcommandsitem.h
+    ${CMAKE_CURRENT_LIST_DIR}/TpDocumentItem
+    ${CMAKE_CURRENT_LIST_DIR}/tpdocumentitem.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tpdocumentitem.h
+    ${CMAKE_CURRENT_LIST_DIR}/TpDocumentsItem
+    ${CMAKE_CURRENT_LIST_DIR}/tpdocumentsitem.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tpdocumentsitem.h
+    ${CMAKE_CURRENT_LIST_DIR}/TpFileModel
+    ${CMAKE_CURRENT_LIST_DIR}/tpfilemodel.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tpfilemodel.h
+    ${CMAKE_CURRENT_LIST_DIR}/TpHtmlDelegate
+    ${CMAKE_CURRENT_LIST_DIR}/tphtmldelegate.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tphtmldelegate.h
+    ${CMAKE_CURRENT_LIST_DIR}/TpSettingsItem
+    ${CMAKE_CURRENT_LIST_DIR}/tpsettingsitem.h
+    ${CMAKE_CURRENT_LIST_DIR}/TpVariantDelegate
+    ${CMAKE_CURRENT_LIST_DIR}/tpvariantdelegate.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tpvariantdelegate.h
+    PARENT_SCOPE
+)

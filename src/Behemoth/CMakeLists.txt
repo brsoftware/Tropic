@@ -1,0 +1,12 @@
+set(TROPIC_SOURCES_BEHEMOTH
+    ${TROPIC_SOURCES_BEHEMOTH}
+    ${CMAKE_CURRENT_LIST_DIR}/TpApplication_RestSettings.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/TpApplication_StylesSettings.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/TpMainWindow_Connections.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/TpMainWindow_Edit.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/TpMainWindow_Misc.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/TpMainWindow_Tools.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/TpMainWindow_Views.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/TpMenuBar_Updaters.cpp
+    PARENT_SCOPE
+)
