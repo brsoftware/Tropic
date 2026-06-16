@@ -168,9 +168,9 @@ int TpCommandsView::filterByScore(TpCommandsItem *item, const QString &filter)
 
     int finalScore = qMax(score, bestChildScore);
 
-    item->setHidden(finalScore <= 0);
+    item->setHidden(finalScore <= 50 && bestChildScore <= 50);
 
-    if (finalScore > 0)
+    if (finalScore > 50)
         item->setExpanded(true);
 
     if (score > m_bestScore)

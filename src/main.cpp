@@ -1,4 +1,5 @@
 #include <TpApplication>
+#include <TpColorScheme>
 #include <TpMainWindow>
 
 #if QT_VERSION_MAJOR <= 5
@@ -21,6 +22,8 @@ int main(int argc, char *argv[])
         qDebug() << "Primary instance user:" << app.primaryUser();
         return 0;
     }
+
+    readFromSettingsToDefaultColorScheme();
 
     TpMainWindow *mainWindow = new TpMainWindow;
     mainWindow->showMaximized();

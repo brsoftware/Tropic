@@ -26,6 +26,7 @@
 #include <Widgets/TpFindContainer>
 #include <Widgets/TpGeneralComboBox>
 #include <TpApplication>
+#include <TpColorScheme>
 #include <TpEditor>
 #include <TpMainWindow>
 #include <TpTabSplitter>
@@ -90,6 +91,8 @@ TpMainWindow::TpMainWindow(bool create, bool open, TpEditor *dropped, QWidget *p
     m_dialogCharacter = new TpDialogCharacter(this);
     m_dialogSettings = new TpDialogSettings(this);
 
+    m_sessionThread = new TpSessionThread(this);
+
     updateSettingsPages();
 
     for (const auto &child : m_menuBar->children())
@@ -121,6 +124,7 @@ TpMainWindow::TpMainWindow(bool create, bool open, TpEditor *dropped, QWidget *p
         {
             unsigned int oldSerial = UINT_MAX;
             TpTabWidget *t = m_widget->tabs()->tab();
+            TpEditor *e = nullptr;
 
             for (const auto &key : editorsMap.keys())
             {
@@ -131,6 +135,18 @@ TpMainWindow::TpMainWindow(bool create, bool open, TpEditor *dropped, QWidget *p
                 if (readingSerial != oldSerial)
                 {
                     oldSerial = readingSerial;
+
+                    if (e)
+                    {
+                        t->setCurrentWidget(e);
+                        e = nullptr;
+                    }
+
+                    else
+                    {
+                        t->setCurrentIndex(t->count() - 1);
+                    }
+
                     t = new TpTabWidget(m_widget->tabs());
                     m_widget->tabs()->addTab(t);
                 }
@@ -151,6 +167,9 @@ TpMainWindow::TpMainWindow(bool create, bool open, TpEditor *dropped, QWidget *p
                     critical->genericSay(tr("Error while parsing settings file"), potentialError,
                         tr("If you have just migrated from an older version of Tropic, this should be normal."), true);
                 }
+
+                if (settingsMap[key].toMap().value("Parent/Show").toBool())
+                    e = editor;
 
                 onTabChanged(t, t->currentIndex());
             }
@@ -2041,12 +2060,9 @@ void TpMainWindow::updateIncrementalSearch(const QString &text)
 
 void TpMainWindow::updateEditorsMap()
 {
-    TpSessionThread *thread = new TpSessionThread(this);
-    connect(thread,
-            &TpSessionThread::finished,
-            thread,
-            &TpSessionThread::deleteLater);
-    thread->start(QThread::Priority::HighPriority);
+    if (!m_sessionThread)
+        return;
+    m_sessionThread->start(QThread::Priority::HighestPriority);
 }
 
 void TpMainWindow::updateLexerComboBox()
@@ -2077,7 +2093,9 @@ void TpMainWindow::updateDocumentsDialog()
 void TpMainWindow::updateSettingsPages()
 {
     auto stack = m_dialogSettings->stack();
-    TpSettingsPage *stylesSettingsPage = new TpSettingsPage(TpSettingsPage::Type::Page, stack);
+
+    // Page 1.
+    static TpSettingsPage *stylesSettingsPage = new TpSettingsPage(TpSettingsPage::Type::Page, stack);
     stylesSettingsPage->setName(tr("Configuring Styles"));
     auto stylesSettingsView = new TpSettingsView(this);
     auto settings = QSharedPointer<QSettings>::create();
@@ -2093,9 +2111,9 @@ void TpMainWindow::updateSettingsPages()
 
         if (lexer)
         {
-            ed->setLexer(nullptr);
-            ed->setLexer(lexer);
+            ed->SendScintilla(TpEditor::SCI_CLEARDOCUMENTSTYLE);
             ed->recolor(0, -1);
+            ed->adjustAppearance();
             ed->viewport()->update();
         }
     });
@@ -2105,6 +2123,18 @@ void TpMainWindow::updateSettingsPages()
     });
 
     stack->addPage(stylesSettingsPage);
+
+    // Page 2.
+    /*static TpSettingsPage *colorSchemePage = new TpSettingsPage(TpSettingsPage::Type::Form, stack);
+    colorSchemePage->setName(tr("Color Scheme"));
+    initSettingsPageForColorScheme(colorSchemePage, defaultColorScheme);
+
+    stylesSettingsPage->setAcceptor([](){
+        updateColorScheme(colorSchemePage, defaultColorScheme);
+        writeColorSchemeToSettings(defaultColorScheme);
+    });
+
+    stack->addPage(colorSchemePage);*/
 }
 
 TP_END_NAMESPACE

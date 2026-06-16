@@ -4,6 +4,7 @@
 #include <functional>
 
 #include <QFormLayout>
+#include <QScrollArea>
 #include <QStackedWidget>
 #include <QVBoxLayout>
 
@@ -38,6 +39,8 @@ public:
     DEF_PROP_FUNC(QString, name, Name)
 
     void addEntry(QWidget *entry);
+    void addEntry(QString key, QMetaType::Type type, QVariant defaultValue = QVariant());
+    QVariant entry(QString key) const;
 
     void setEditorAcceptor(std::function<void(TpEditor*)> func);
     void setAcceptor(std::function<void()> func);
@@ -46,9 +49,13 @@ public:
 
 private:
     QVBoxLayout *m_layout;
+    QScrollArea *m_formWidget;
+    QWidget *m_formContainer;
     QFormLayout *m_formLayout;
     Type m_type;
     TpSettingsStack *m_parent;
+
+    QMap<QString, QWidget*> m_editors;
 
     std::function<void(TpEditor*)> m_edAcceptor = [](TpEditor*){};
     std::function<void()> m_acceptor = [](){};

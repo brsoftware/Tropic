@@ -5,6 +5,8 @@
 
 TP_NAMESPACE
 
+class TpSettingsPage;
+
 typedef struct TpColorScheme
 {
     QColor Default = QColor(0xe0, 0xe0, 0xe0);
@@ -176,6 +178,11 @@ typedef struct TpColorScheme
 } TpColorScheme;
 
 inline TpColorScheme *defaultColorScheme = new TpColorScheme();
+
+void writeColorSchemeToSettings(TpColorScheme *scheme);
+void readFromSettingsToDefaultColorScheme();
+void initSettingsPageForColorScheme(TpSettingsPage *page, TpColorScheme *scheme);
+void updateColorScheme(TpSettingsPage *page, TpColorScheme *scheme);
 
 TP_END_NAMESPACE
 

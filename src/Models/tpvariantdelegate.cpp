@@ -8,6 +8,7 @@
 
 #include <Views/TpSettingsView>
 #include <Widgets/TpColoredLineEdit>
+#include <Widgets/TpFontButton>
 
 TP_NAMESPACE
 
@@ -109,6 +110,12 @@ QWidget *TpVariantDelegate::createEditor(QWidget *parent, const QStyleOptionView
                 &TpColoredLineEdit::colorChangedByUser,
                 this,
                 &TpVariantDelegate::committingColoredLineEdit);*/
+        return ed;
+    }
+
+    case QMetaType::Type::QFont: {
+        auto ed = new TpFontButton(parent);
+        ed->setFont(qvariant_cast<QFont>(original));
         return ed;
     }
 
@@ -220,6 +227,11 @@ void TpVariantDelegate::setModelData(QWidget *editor, QAbstractItemModel *model,
     else if (TpColoredLineEdit *coloredLineEdit = qobject_cast<TpColoredLineEdit*>(editor))
     {
         value.setValue(coloredLineEdit->color());
+    }
+
+    else if (TpFontButton *fontButton = qobject_cast<TpFontButton*>(editor))
+    {
+        value.setValue(fontButton->font());
     }
 
     else if (QLineEdit *lineEdit = qobject_cast<QLineEdit*>(editor))
@@ -334,6 +346,7 @@ bool TpVariantDelegate::isSupported(int type)
     case QMetaType::Type::QString:
     case QMetaType::Type::QStringList:
     case QMetaType::Type::QTime:
+    case QMetaType::Type::QFont:
     case QMetaType::Type::UInt:
     case QMetaType::Type::ULongLong:
         return true;
@@ -366,10 +379,10 @@ QString TpVariantDelegate::displayText(const QVariant &value)
         return value.toString();
 
     case QMetaType::Type::QColor: {
-            QColor color = qvariant_cast<QColor>(value);
-            return QString("(%1,%2,%3,%4)")
-                   .arg(color.red()).arg(color.green())
-                   .arg(color.blue()).arg(color.alpha());
+        QColor color = qvariant_cast<QColor>(value);
+        return QString("(%1,%2,%3,%4)")
+               .arg(color.red()).arg(color.green())
+               .arg(color.blue()).arg(color.alpha());
     }
 
     case QMetaType::Type::QDate:
@@ -380,20 +393,25 @@ QString TpVariantDelegate::displayText(const QVariant &value)
         return "<Invalid>";
 
     case QMetaType::Type::QPoint: {
-            QPoint point = value.toPoint();
-            return QString("(%1,%2)").arg(point.x()).arg(point.y());
+        QPoint point = value.toPoint();
+        return QString("(%1,%2)").arg(point.x()).arg(point.y());
     }
 
     case QMetaType::Type::QRect: {
-            QRect rect = value.toRect();
-            return QString("(%1,%2,%3,%4)")
-                   .arg(rect.x()).arg(rect.y())
-                   .arg(rect.width()).arg(rect.height());
+        QRect rect = value.toRect();
+        return QString("(%1,%2,%3,%4)")
+               .arg(rect.x()).arg(rect.y())
+               .arg(rect.width()).arg(rect.height());
     }
 
     case QMetaType::Type::QSize: {
-            QSize size = value.toSize();
-            return QString("(%1,%2)").arg(size.width()).arg(size.height());
+        QSize size = value.toSize();
+        return QString("(%1,%2)").arg(size.width()).arg(size.height());
+    }
+
+    case QMetaType::Type::QFont: {
+        QFont font = qvariant_cast<QFont>(value);
+        return font.families().at(0);
     }
 
     case QMetaType::QStringList:

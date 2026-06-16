@@ -557,6 +557,8 @@ QMap<QString, QVariant> TpEditor::toMap(QMap<QString, QVariant> additionalInfo)
 {
     QMap<QString, QVariant> map{
         {"Parent/Serial", m_parent->m_serial},
+        {"Parent/Show", m_parent->currentWidget() == this},
+        {"Edit/Position", getPosition()},
         {"View/ShowSymbols/SpacesAndTabs", whitespaceVisibility()},
         {"View/ShowSymbols/NonPrintable", eolVisibility()},
         {"View/ShowSymbols/IndentationGuides", indentationGuides()},
@@ -634,6 +636,9 @@ QString TpEditor::fromMap(QMap<QString, QVariant> map)
     func(static_cast<type>(qvariant_cast<int>(map[key])))  // E stands for "Enum"
 #endif
 
+    CHECK_MAP("Parent/Serial");
+    CHECK_MAP("Parent/Show");
+    CHECK_MAP("Edit/Position");
     CHECK_MAP("View/ShowSymbols/SpacesAndTabs");
     CHECK_MAP("View/ShowSymbols/NonPrintable");
     CHECK_MAP("View/ShowSymbols/IndentationGuides");
@@ -679,6 +684,7 @@ QString TpEditor::fromMap(QMap<QString, QVariant> map)
 
     QString potentialError;
 
+    M(setCurrentPosition, "Edit/Position", int);
     E_M(setWhitespaceVisibility, "View/ShowSymbols/SpacesAndTabs", WhitespaceVisibility);
     M(setEolVisibility, "View/ShowSymbols/NonPrintable", bool);
     M(setIndentationGuides, "View/ShowSymbols/IndentationGuides", bool);

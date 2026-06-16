@@ -28,6 +28,7 @@ QT_END_NAMESPACE
 TP_NAMESPACE
 
 class TpMessageConfirmClose;
+class TpSessionThread;
 class TpTabWidget;
 
 class TpMainWindow : public QMainWindow
@@ -509,6 +510,8 @@ private:
     TpDialogGoto *m_dialogGoto;
     TpDialogSettings *m_dialogSettings;
     TpMessageConfirmClose *m_confirmClose;
+
+    TpSessionThread *m_sessionThread;
 };
 
 TP_END_NAMESPACE

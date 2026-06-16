@@ -32,11 +32,13 @@ set(TROPIC_SOURCES
     ${CMAKE_CURRENT_LIST_DIR}/tpapplication.cpp
     ${CMAKE_CURRENT_LIST_DIR}/tpapplication.h
     ${CMAKE_CURRENT_LIST_DIR}/TpColorScheme
+    ${CMAKE_CURRENT_LIST_DIR}/tpcolorscheme.cpp
     ${CMAKE_CURRENT_LIST_DIR}/tpcolorscheme.h
     ${CMAKE_CURRENT_LIST_DIR}/TpEditor
     ${CMAKE_CURRENT_LIST_DIR}/tpeditor.cpp
     ${CMAKE_CURRENT_LIST_DIR}/tpeditor.h
     ${CMAKE_CURRENT_LIST_DIR}/TpFontScheme
+    ${CMAKE_CURRENT_LIST_DIR}/tpfontscheme.cpp
     ${CMAKE_CURRENT_LIST_DIR}/tpfontscheme.h
     ${CMAKE_CURRENT_LIST_DIR}/TpGeneralAction
     ${CMAKE_CURRENT_LIST_DIR}/tpgeneralaction.cpp

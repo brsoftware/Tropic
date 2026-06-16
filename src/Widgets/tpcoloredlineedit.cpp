@@ -13,7 +13,7 @@ TpColoredLineEdit::TpColoredLineEdit(QWidget *parent)
     m_action->setObjectName("coloredLineEdit_Button");
     addAction(m_action, TrailingPosition);
     setColor(QColor());
-    setInputMask("(999,999,999,999);_");
+    setInputMask("(000,000,000,000);_");
 
     connect(m_action,
             &QAction::triggered,

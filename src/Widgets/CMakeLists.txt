@@ -30,6 +30,9 @@ set(TROPIC_SOURCES_WIDGETS
     ${CMAKE_CURRENT_LIST_DIR}/TpFindToolBar
     ${CMAKE_CURRENT_LIST_DIR}/tpfindtoolbar.cpp
     ${CMAKE_CURRENT_LIST_DIR}/tpfindtoolbar.h
+    ${CMAKE_CURRENT_LIST_DIR}/TpFontButton
+    ${CMAKE_CURRENT_LIST_DIR}/tpfontbutton.cpp
+    ${CMAKE_CURRENT_LIST_DIR}/tpfontbutton.h
     ${CMAKE_CURRENT_LIST_DIR}/TpGeneralComboBox
     ${CMAKE_CURRENT_LIST_DIR}/tpgeneralcombobox.cpp
     ${CMAKE_CURRENT_LIST_DIR}/tpgeneralcombobox.h

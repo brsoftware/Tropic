@@ -11,6 +11,7 @@ TpSettingsStack::TpSettingsStack(QWidget *parent)
     m_layout = new QHBoxLayout();
     setLayout(m_layout);
     m_nav = new QListWidget(this);
+    m_nav->setSelectionMode(QListWidget::SelectionMode::SingleSelection);
     m_layout->addWidget(m_nav);
     m_widget = new QStackedWidget(this);
     m_layout->addWidget(m_widget);
@@ -25,7 +26,8 @@ int TpSettingsStack::addPage(TpSettingsPage *page)
 {
     int idx = m_widget->addWidget(page);
     m_nav->addItem(page->name());
-    m_widget->setCurrentIndex(idx);
+    m_nav->setCurrentRow(0);
+    m_widget->setCurrentIndex(0);
     return idx;
 }
 
