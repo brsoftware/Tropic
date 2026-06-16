@@ -3,6 +3,7 @@ bin/
 bin_qt5/
 build/
 cmake-build-release/
+.qtcreator/
 
 # We don't do Qt Creator cache files here.
 *.user
